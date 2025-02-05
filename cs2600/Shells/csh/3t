@@ -1,0 +1,23 @@
+#!/bin/csh
+
+echo "Enter your score: "
+set score = $<
+
+# @ score = $score
+
+if ($score < 0 || $score > 100) then
+    echo "Error: Score must be between 0 and 100."
+    exit 1
+endif
+
+if ($score >= 90) then
+    echo "You got an A."
+else if ($score >= 80) then
+    echo "You got a B."
+else if ($score >= 70) then
+    echo "You got a C."
+else if ($score >= 60) then
+    echo "You got a D."
+else
+    echo "You failed."
+endif

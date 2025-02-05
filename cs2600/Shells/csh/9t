@@ -1,0 +1,4 @@
+#!/bin/csh
+echo "Number $1"
+@ c = $1 * $1 * $1
+echo "Cube $c"

@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc,char argv[]) {
+    FILE file=fopen("input.txt","r");
+
+int array[20]; int smallest,sum=0; float average;
+
+while (int i=0;i<20;i++){
+    fscanf("%d",&array[i]);
+
+    if (i==0) smallest=array[i];
+    else if (array[i]<smallest) smallest=array[i];
+
+    sum+=array[i];
+}
+
+average=sum/20.0;
+
+printf("The smallest integer is: %d\nThe sum of integers is: %d\nThe average of the integers is: %f\n",smallest,sum,average);
+}

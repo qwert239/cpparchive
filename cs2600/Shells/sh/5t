@@ -1,0 +1,15 @@
+#!/usr/bin/sh
+echo "Enter color:"
+read color
+
+case "$color" in
+	Bl*|bl*)
+		echo "The sky color is $color"
+	;;
+	red|yellow)
+		echo "The sun is sometimes this color"
+	;;
+	*)
+		echo "Color not in categories defined"
+	;;
+esac

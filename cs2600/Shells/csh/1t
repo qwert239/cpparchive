@@ -1,0 +1,11 @@
+#!/bin/csh
+
+echo "Enter number:"
+set num = $<
+@ r = $num % 2
+
+if ($r == 0) then
+	echo "$num is even"
+else if ($r == 1) then
+	echo "$num is odd"
+endif

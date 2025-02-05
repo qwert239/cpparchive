@@ -1,0 +1,15 @@
+#!/bin/csh
+
+echo -n "Enter a color: "
+set color = $<
+switch ($color)
+    case [bB]l*:
+        echo "The sky color is $color."
+        breaksw
+    case red:
+    case yellow:
+        echo "The sun is sometimes this color."
+        breaksw
+    default:
+        echo "color is not in any of the categories defined"
+endsw

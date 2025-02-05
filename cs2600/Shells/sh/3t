@@ -1,0 +1,19 @@
+#!/usr/bin/sh
+echo "Enter score: "
+read sc
+if [ "$sc" -lt "0" ] || [ "$sc" -gt "100" ]; then
+	echo "Error: Wrong number"
+	exit
+fi
+
+if [ "$sc" -ge "90" ] && [ "$sc" -le "100" ]; then
+	echo "You got A"
+elif [ "$sc" -ge "80" ] && [ "$sc" -lt "90" ]; then
+        echo "You got B"
+elif [ "$sc" -ge "70" ] && [ "$sc" -lt "80" ]; then
+        echo "You got C"
+elif [ "$sc" -ge "60" ] && [ "$sc" -lt "70" ]; then
+        echo "You got D"
+else
+	echo "You FAILED"
+fi
