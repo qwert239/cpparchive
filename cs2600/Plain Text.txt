@@ -1,0 +1,32 @@
+1. sed -i 's/Jon/Jonathan/' datebook.txt
+2. sed -i '1,3d' datebook.txt
+3. sed -n '5,10p' datebook.txt
+4. sed -i '/Lane/d' datebook.txt
+5. sed -nE '/November|December/p' datebook.txt
+6. sed -i '/^Fred/s/$/***/' datebook.txt
+7. sed -i '/Jose/c\JOSE HAS RETIRED' datebook.txt
+8. sed -i 's/3\/19\/35/11\/14\/46/' datebook.txt
+9. sed -i '/^$/d' datebook.txt
+10.
+sed -i '1i\PERSONNEL FILE' datebook.txt
+sed -Ei 's/([0-9]+500)$//' datebook.txt
+sed -i 's/\([^:]*\) \([^:]*\):/\2 \1:/' datebook.txt
+sed -i '$a\THE END' datebook.txt
+
+--awk--
+issue with 4
+why does ^(916) not work in 7
+
+1. awk -F: '{print $2}' datafile2
+2. awk -F: '$0 ~ /Dan/ {print $2}' datafile2
+3. awk -F: '$0 ~ /Susan/ {print $1, $2}' datafile2
+4. awk -F: 'split($1,name," "); name[2] ~ /^D/ {print $1}' datafile2
+5. awk -F: '{split($1,name," "); if ($1 ~ /^[CE]/) print name[1]}' datafile2
+6. awk -F: '$1 ~ /^.... / {split($1,name," "); print name[1]}' datafile2
+7. awk -F: '$2 ~ /(916)/ {split($1,name," "); print name[1]}' datafile2
+8. awk -F: '$1 ~ /^Mike/ {print "$"$3,"$"$4,"$"$5}' datafile2
+9. awk -F: '{split($1,name," "); print name[2]","name[1]}' datafile2
+10.
+{split($1,name," "); if (name[2] ~ /Savage/) print $1,$2}
+$0 ~ /^Chet/ {print "$"$3 "$"$4 "$"$5}
+$3 ~ /250/ {print $1}

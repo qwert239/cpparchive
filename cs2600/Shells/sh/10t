@@ -1,0 +1,62 @@
+#!/usr/bin/sh
+if [ "$#" -ne "2" ]; then
+	echo "Enter two arguments to perform operations on."
+	exit
+fi
+
+num1="$1"
+num2="$2"
+
+perform() {
+echo "Enter operation to perform:"
+echo "A: add, S: subtract, M: multiply, D: divide, E: exit"
+read a
+op=$(echo "$a" | tr "[:lower:]" "[:upper:]")
+
+case $op in
+	A)
+		echo "$(($num1 + $num2))"
+	;;
+	S)
+                echo "$(($num1 - $num2))"
+        ;;
+	M)
+                echo "$(($num1 * $num2))"
+        ;;
+	D)
+                echo "$(($num1 / $num2))"
+        ;;
+	E)
+		exit
+	;;
+	*)
+		echo "Wrong option, select again"
+		perform "$1" "$2"
+	;;
+esac
+}
+
+perform "$1" "$2"
+
+while [ "1" ]; do
+echo "Enter option:"
+echo "1: Another operation on same integers"
+echo "2: Choose different integers"
+echo "3: exit"
+read b
+case $b in
+	1)
+		perform num1 num2
+	;;
+	2)
+		echo "Enter first integer:"
+		read num1
+		echo "Enter second integer:"
+		read num2
+		perform num1 num2
+	;;
+	3)
+		exit
+	;;
+esac
+done

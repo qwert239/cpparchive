@@ -1,0 +1,13 @@
+#!/usr/bin/sh
+answer="a"
+while [ "$answer" != "Y" ] && [ "$answer" != "N" ] && [ "$answer" != "y" ] && [ "$answer" != "n" ]; do
+	echo "Are you OK?"
+	read answer
+	if [ "$answer" = "y" ] || [ "$answer" = "Y" ]; then
+		echo "glad to hear it"
+	elif [ "$answer" = "n" ] || [ "$answer" = "N" ]; then
+		echo "sorry that you are not feeling good"
+	else
+		echo "incorrect choice"
+	fi
+done

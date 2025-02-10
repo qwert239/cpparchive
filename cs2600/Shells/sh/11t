@@ -1,0 +1,12 @@
+#!/usr/bin/sh
+echo "Enter an integer between 1 and 10:"
+read num
+a="1"
+sum="0"
+mul="1"
+while [ "$a" -le "$num" ]; do
+	sum="$(($sum + $a))"
+	mul="$(($mul * $a))"
+	a="$(($a + 1))"
+done
+echo "Sum: $sum, Product: $mul"

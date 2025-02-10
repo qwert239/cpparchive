@@ -1,0 +1,8 @@
+#!/usr/bin/sh
+
+cal_cube() {
+	echo "Number $1"
+	echo "Cube $(($1 * $1 * $1))"
+}
+
+cal_cube "$1"

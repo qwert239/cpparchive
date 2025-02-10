@@ -1,0 +1,6 @@
+#!/usr/bin/sh
+d=$(date)
+
+for w in $d; do
+	echo "$w"
+done

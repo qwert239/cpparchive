@@ -1,0 +1,3 @@
+The smallest integer is: 1
+The sum of integers is: 225
+The average of the integers is: 11.250000
